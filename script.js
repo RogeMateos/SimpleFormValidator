@@ -32,13 +32,17 @@ function checkEmail(input) {
 function checkRequired(inPutArr) {
   inPutArr.forEach(function (input) {
     if (input.value.trim() === "") {
-      showError(input, `${input.id}is required`);
+      showError(input, `${getFieldName(input)} is required`);
     } else {
       showSuccess(input);
     }
   });
 }
 
+//Get Fieldname First capital letter
+function getFieldName(input) {
+  return input.id.charAt(0).toUpperCase() + input.id.slice(1);
+}
 //Event Listeners
 form.addEventListener("submit", function (e) {
   e.preventDefault();
