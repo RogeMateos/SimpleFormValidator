@@ -31,7 +31,11 @@ function checkEmail(input) {
 //loop through the array, Check required Fields
 function checkRequired(inPutArr) {
   inPutArr.forEach(function (input) {
-    console.log(input);
+    if (input.value.trim() === "") {
+      showError(input, "Is required");
+    } else {
+      showSuccess(input);
+    }
   });
 }
 
