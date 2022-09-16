@@ -32,7 +32,7 @@ function checkEmail(input) {
 function checkRequired(inPutArr) {
   inPutArr.forEach(function (input) {
     if (input.value.trim() === "") {
-      showError(input, "Is required");
+      showError(input, `${input.id}is required`);
     } else {
       showSuccess(input);
     }
