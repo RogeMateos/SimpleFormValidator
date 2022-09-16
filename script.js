@@ -28,39 +28,15 @@ function checkEmail(input) {
   }
 }
 
+//loop through the array, Check required Fields
+function checkRequired(inPutArr) {
+  inPutArr.forEach(function (input) {
+    console.log(input);
+  });
+}
+
 //Event Listeners
 form.addEventListener("submit", function (e) {
   e.preventDefault();
-  if (username.value === "") {
-    showError(username, "username is required");
-  } else {
-    showSuccess(username);
-  }
-});
-
-form.addEventListener("submit", function (e) {
-  e.preventDefault();
-  if (email.value === "") {
-    showError(email, "Email is required");
-  } else {
-    showSuccess(email);
-  }
-});
-
-form.addEventListener("submit", function (e) {
-  e.preventDefault();
-  if (password.value === "") {
-    showError(password, "username is required");
-  } else {
-    showSuccess(password);
-  }
-});
-
-form.addEventListener("submit", function (e) {
-  e.preventDefault();
-  if (password2.value === "") {
-    showError(password2, "username is required");
-  } else {
-    showSuccess(password2);
-  }
+  checkRequired([username, email, password, password2]);
 });
